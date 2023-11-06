@@ -1,4 +1,5 @@
 """Tests for AdjacencyNeighbourhood."""
+
 from typing import Set
 
 import geopandas as gpd

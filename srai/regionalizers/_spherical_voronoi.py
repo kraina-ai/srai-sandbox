@@ -685,9 +685,7 @@ def ecef2geodetic_vectorized(
 
     # inside ellipsoid?
     inside = (
-        x**2 / ell.semimajor_axis**2
-        + y**2 / ell.semimajor_axis**2
-        + z**2 / ell.semiminor_axis**2
+        x**2 / ell.semimajor_axis**2 + y**2 / ell.semimajor_axis**2 + z**2 / ell.semiminor_axis**2
         < 1
     )
 

@@ -1,4 +1,5 @@
 """Conftest for H3 tests."""
+
 from typing import List
 
 import geopandas as gpd

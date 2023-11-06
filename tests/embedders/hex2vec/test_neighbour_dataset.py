@@ -1,4 +1,5 @@
 """NeighbourDataset tests."""
+
 from contextlib import nullcontext as does_not_raise
 from typing import TYPE_CHECKING, Any
 

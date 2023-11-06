@@ -1,4 +1,5 @@
 """Tests for TileLoader class."""
+
 from io import BytesIO
 from typing import List
 from urllib.parse import urljoin

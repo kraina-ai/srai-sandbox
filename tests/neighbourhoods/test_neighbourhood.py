@@ -1,4 +1,5 @@
 """Tests for LookupNeighbourhood."""
+
 from typing import Any, Dict, Optional, Set, TypeVar
 
 import pytest

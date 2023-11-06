@@ -1,4 +1,5 @@
 """Utility function for geocoding a name to `regions_gdf`."""
+
 from typing import Any, Union
 
 import geopandas as gpd

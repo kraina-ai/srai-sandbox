@@ -90,13 +90,11 @@ def h3_to_geoseries(h3_index: Union[int, str, Iterable[Union[int, str]]]) -> gpd
 
 
 @overload
-def h3_to_shapely_geometry(h3_index: Union[int, str]) -> Polygon:
-    ...
+def h3_to_shapely_geometry(h3_index: Union[int, str]) -> Polygon: ...
 
 
 @overload
-def h3_to_shapely_geometry(h3_index: Iterable[Union[int, str]]) -> List[Polygon]:
-    ...
+def h3_to_shapely_geometry(h3_index: Iterable[Union[int, str]]) -> List[Polygon]: ...
 
 
 # TODO: write tests (#322)
@@ -120,22 +118,19 @@ def h3_to_shapely_geometry(
 
 
 @overload
-def get_local_ij_index(origin_index: str, h3_index: str) -> Tuple[int, int]:
-    ...
+def get_local_ij_index(origin_index: str, h3_index: str) -> Tuple[int, int]: ...
 
 
 @overload
 def get_local_ij_index(
     origin_index: str, h3_index: List[str], return_as_numpy: Literal[False]
-) -> List[Tuple[int, int]]:
-    ...
+) -> List[Tuple[int, int]]: ...
 
 
 @overload
 def get_local_ij_index(
     origin_index: str, h3_index: List[str], return_as_numpy: Literal[True]
-) -> npt.NDArray[np.int8]:
-    ...
+) -> npt.NDArray[np.int8]: ...
 
 
 # Last fallback needed as per documentation:
@@ -143,8 +138,7 @@ def get_local_ij_index(
 @overload
 def get_local_ij_index(
     origin_index: str, h3_index: List[str], return_as_numpy: bool
-) -> Union[List[Tuple[int, int]], npt.NDArray[np.int8]]:
-    ...
+) -> Union[List[Tuple[int, int]], npt.NDArray[np.int8]]: ...
 
 
 def get_local_ij_index(

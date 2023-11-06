@@ -3,6 +3,7 @@ PBF File Handler.
 
 This module contains a handler capable of parsing a PBF file into a GeoDataFrame.
 """
+
 import warnings
 from typing import TYPE_CHECKING, Any, Callable, Dict, Optional, Sequence, Union, cast
 

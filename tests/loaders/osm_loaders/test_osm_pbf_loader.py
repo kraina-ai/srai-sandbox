@@ -1,4 +1,5 @@
 """Tests for OSMPbfLoader."""
+
 from pathlib import Path
 from typing import List, Union
 from unittest import TestCase

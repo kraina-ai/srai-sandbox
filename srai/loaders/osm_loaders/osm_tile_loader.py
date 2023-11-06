@@ -3,6 +3,7 @@ OSM tile loader.
 
 This module implements downloading tiles from given OSM tile server.
 """
+
 from io import BytesIO
 from pathlib import Path
 from typing import Any, Iterable, Optional, Union

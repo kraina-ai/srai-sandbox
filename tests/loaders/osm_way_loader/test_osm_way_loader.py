@@ -1,4 +1,5 @@
 """Tests for OSMWayLoader."""
+
 import pickle as pkl
 from contextlib import nullcontext as does_not_raise
 from functools import partial

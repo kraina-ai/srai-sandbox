@@ -1,4 +1,5 @@
 """Tests for neigbourhoods with regions."""
+
 from typing import Any, Set
 
 import geopandas as gpd
