@@ -48,7 +48,7 @@ jobs:
           keep-unreleased-section: True
       - name: Run bumpver
         run: |
-          pdm run bumpver update --${{ inputs.bumpType }} -vvv
+          pdm run bumpver update --allow-dirty --${{ inputs.bumpType }} -vvv
       - name: Get commit message
         id: commit_message
         run: |
