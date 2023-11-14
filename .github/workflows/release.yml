@@ -41,6 +41,18 @@ jobs:
         run: pdm install -d -G dev --skip=post_install
       - name: Run bumpver
         run: |
-          pdm run bumpver update --tag-commit --push --${{ inputs.bumpType }} -vvv
-      # - name: Create Pull Request
-      #   uses: peter-evans/create-pull-request@v5
+          pdm run bumpver update --${{ inputs.bumpType }} -vvv
+      - name: Get commit message
+        id: commit_message
+        run: |
+          git log -1 --pretty=%B | cat >> $COMMIT_MESSAGE
+      - name: Get new version
+        id: new_version
+        run: |
+          bumpver show -n -e | grep CURRENT_VERSION | cut -c 17- >> $semver_version
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: ${{ steps.commit_message.outputs.COMMIT_MESSAGE }}
+          branch: ${{ format('release-{0}', steps.new_version.outputs.semver_version) }}
+          labels: release
