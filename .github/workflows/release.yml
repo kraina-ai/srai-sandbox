@@ -39,6 +39,13 @@ jobs:
           architecture: x64
       - name: Install dependencies
         run: pdm install -d -G dev --skip=post_install
+      - name: Bump changelog version
+        uses: release-flow/keep-a-changelog-action@v2
+        with:
+          command: bump
+          version: ${{ inputs.bumpType }}
+          tag-prefix: ""
+          keep-unreleased-section: True
       - name: Run bumpver
         run: |
           pdm run bumpver update --${{ inputs.bumpType }} -vvv
@@ -58,10 +65,3 @@ jobs:
           labels: release
           base: main
           body: ""
-      - name: Bump changelog version
-        uses: release-flow/keep-a-changelog-action@v2
-        with:
-          command: bump
-          version: ${{ inputs.bumpType }}
-          tag-prefix: ""
-          keep-unreleased-section: True
