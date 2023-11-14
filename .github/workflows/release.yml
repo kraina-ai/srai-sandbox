@@ -53,6 +53,8 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
+          token: ${{ secrets.CICD_PAT_TOKEN }}
+          committer: Kraina CI/CD <cicd@kraina.ai>
           title: ${{ steps.commit_message.outputs.COMMIT_MESSAGE }}
           branch: ${{ format('release-{0}', steps.new_version.outputs.CURRENT_VERSION) }}
           labels: release
