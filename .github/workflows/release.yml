@@ -40,6 +40,7 @@ jobs:
       - name: Install dependencies
         run: pdm install -d -G dev --skip=post_install
       - name: Bump changelog version
+        id: changelog
         uses: release-flow/keep-a-changelog-action@v2
         with:
           command: bump
@@ -64,4 +65,4 @@ jobs:
           branch: ${{ format('release-{0}', steps.new_version.outputs.CURRENT_VERSION) }}
           labels: release
           base: main
-          body: ""
+          body: ${{ steps.changelog.outputs.release-notes }}
