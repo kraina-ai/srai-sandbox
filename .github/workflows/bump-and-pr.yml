@@ -21,13 +21,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.CICD_PAT_TOKEN }}
-      - name: Configure Git user
-        run: |
-          git config --local user.name "Kraina CI/CD"
-          git config --local user.email "cicd@kraina.ai"
+      #   with:
+      #     fetch-depth: 0
+      #     token: ${{ secrets.CICD_PAT_TOKEN }}
+      # - name: Configure Git user
+      #   run: |
+      #     git config --local user.name "Kraina CI/CD"
+      #     git config --local user.email "cicd@kraina.ai"
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
