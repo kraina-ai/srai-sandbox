@@ -1,4 +1,4 @@
-name: "Bump ⬆️ and release ✈️ a new library version"
+name: "Bump ⬆️ library version and create PR"
 on:
   workflow_dispatch:
     inputs:
@@ -16,8 +16,8 @@ env:
   PYTHON_VERSION: 3.11
 
 jobs:
-  release:
-    name: Bump ⬆️ and release ✈️ a new library version (${{ inputs.bumpType }})
+  bump-n-pr:
+    name: Bump ⬆️ and create a Pull Request with a new library version (${{ inputs.bumpType }})
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -62,7 +62,7 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           title: ${{ steps.commit_message.outputs.COMMIT_MESSAGE }}
-          branch: ${{ format('release-{0}', steps.new_version.outputs.CURRENT_VERSION) }}
+          branch: ${{ format('release/{0}', steps.new_version.outputs.CURRENT_VERSION) }}
           labels: release
           base: main
           body: ${{ steps.changelog.outputs.release-notes }}
