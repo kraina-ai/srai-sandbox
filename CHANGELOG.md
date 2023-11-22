@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.2] - 2023-11-22
+
 ### Added
 
 - CI release via GitHub Actions
@@ -222,7 +224,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Intersection Joiner
 - Geoparquet Loader
 
-[Unreleased]: https://github.com/kraina-ai/srai-sandbox/compare/0.6.1...HEAD
+[Unreleased]: https://github.com/kraina-ai/srai-sandbox/compare/0.6.2...HEAD
+
+[0.6.2]: https://github.com/kraina-ai/srai-sandbox/compare/0.6.1...0.6.2
 
 [0.6.1]: https://github.com/kraina-ai/srai-sandbox/compare/0.6.0...0.6.1
 
